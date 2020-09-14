@@ -1,0 +1,212 @@
+:root {
+  /* Colors */
+  --light: #f4f4f4;
+  --dark: #333;
+  --spring: #3cb371;
+  --lcoral: #f08080;
+  --bisque: #ffe4c4;
+
+  /* Sizes */
+  --xsmall: 0.5rem;
+  --small: 1rem;
+  --med: 2rem;
+  --large: 3rem;
+  --xlarge: 3.5rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--light);
+  font-family: 'Raleway', sans-serif;
+}
+
+.screen100 {
+  height: 100vh;
+}
+
+.highlight {
+  color: var(--bisque);
+}
+
+.spring {
+  background-color: var(--spring);
+  color: var(--light);
+}
+
+.lcoral {
+  background-color: var(--lcoral);
+  color: var(--light);
+}
+
+.bisque {
+  background-color: var(--bisque);
+  color: var(--dark);
+}
+
+/* Introduction */
+#intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#intro .parent {
+  display: grid;
+  place-items: center;
+  border-radius: var(--large);
+  padding: var(--med);
+  max-width: 500px;
+}
+
+#intro .card {
+  border-radius: var(--large);
+  width: clamp(23ch, 90%, 46ch);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--small);
+  text-align: center;
+}
+
+#intro .card p {
+  margin: var(--med);
+  line-height: var(--med);
+}
+
+/* Intro - Skills */
+#intro .skills {
+  display: flex;
+  margin: var(--small) 0;
+}
+
+#intro .skills .box {
+  margin: 0 var(--xsmall);
+  pointer-events: none;
+}
+
+#intro .box {
+  border-radius: var(--small);
+  padding: var(--small);
+  text-align: center;
+}
+
+/* Portfolio */
+#portfolio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--xlarge);
+}
+
+#portfolio h2 {
+  background-color: var(--lcoral);
+  border-radius: var(--small);
+  color: var(--light);
+  margin-top: var(--xlarge);
+  margin-bottom: var(--med);
+  padding: var(--xsmall);
+}
+
+#portfolio .parent {
+  display: grid;
+  grid-gap: var(--small);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  margin: 0 var(--large);
+}
+
+#portfolio .parent .box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--med);
+  text-align: center;
+}
+
+#portfolio .parent .box .thumbnail {
+  display: block;
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+#portfolio .parent .box .preview {
+  margin-top: var(--small);
+}
+
+#portfolio .parent .box .preview h3 {
+  color: var(--lcoral);
+  pointer-events: none;
+}
+
+#portfolio .parent .box .preview p {
+  margin: var(--med) 0;
+}
+
+#portfolio .parent .box .preview .project-link {
+  border: 1px solid var(--lcoral);
+  color: var(--lcoral);
+  padding: var(--xsmall) var(--small);
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+#portfolio .parent .box .preview .project-link:hover {
+  background-color: var(--lcoral);
+  color: var(--light);
+}
+
+/* Email */
+.email {
+  margin: var(--xlarge) 0;
+}
+
+.email-highlight {
+  color: var(--spring);
+}
+
+/* Media Queries */
+@media (max-width: 750px) {
+  .screen100 {
+    height: auto;
+  }
+
+  /* Intro */
+  #intro .card {
+    width: clamp(30ch, 90%, 65ch);
+    justify-content: space-evenly;
+  }
+
+  #intro .card h1 {
+    font-size: var(--large);
+  }
+
+  #intro .card p {
+    font-size: 1.5rem;
+    line-height: var(--large);
+  }
+
+  /* Intro - Skills */
+  #intro .skills {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: var(--small);
+  }
+
+  /* Portfolio */
+  #portfolio {
+    margin: var(--xlarge) 0;
+  }
+
+  #portfolio .parent {
+    margin: 0;
+  }
+}
